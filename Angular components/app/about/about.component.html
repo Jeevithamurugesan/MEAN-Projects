@@ -1,0 +1,11 @@
+<app-header></app-header>
+
+<input type="text" [(ngModel)]="name">
+<div *ngFor="let obj of people | textfilter : name">
+
+    {{obj.name}}--{{obj.age}}
+
+
+
+</div>
+<app-footer></app-footer>

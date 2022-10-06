@@ -1,0 +1,60 @@
+<app-header></app-header>
+<p>{{myname}}</p>
+<p>{{myaddres}}</p>
+<div>
+
+    <input type="text" placeholder="Enter Name" [(ngModel)]="text_name" />
+    <input type="text" placeholder="Enter Age" [(ngModel)]="text_name1" />
+    <button (click)="showAlert()">Click me to show the alert</button>
+
+    <h1>{{text_name}}</h1>
+    <h1>{{text_name1}}</h1>
+
+    <div *ngFor="let obj of people">
+        <div *ngIf="obj.name != 'Testname2'">
+            {{obj.name}}--{{obj.age}}
+        </div>
+
+    </div>
+    <div *ngFor="let obj of people">
+        <span [ngClass]="{'title':obj.age>40}">
+
+            {{obj.name}}--{{obj.age}}
+        </span>
+
+
+
+    </div>
+    <div *ngIf="isShow">this can be hidden</div>
+    <button (click)="showAndHide()">Show And Hide</button>
+    <h1 [ngClass]="cssCLassName">this is simple heading.</h1>
+    <button (click)="changeClassName('title')">title</button>
+    <button (click)="changeClassName('title1')">title1</button>
+    <button (click)="changeClassName('title2')">title2</button>
+    {{myname | uppercase}}
+    <br>
+    {{price | currency:'Cad'}}
+    <br>
+    {{curentDate | date :'shortDate'}}
+    <br>
+    {{price | sqrt}}
+    <h1>{{num | sqrt}}</h1>
+
+    <button (click)="getHttpUrl()">Get Http URL</button>
+
+    <div>
+        <input [(ngModel)]="person_name" type="text" placeholder="Enter Name">
+        <input [(ngModel)]="job_name" type="text" placeholder="Enter Job Name">
+
+        <button (click)="postHttpUrl()">post Http Url </button>
+
+    </div>
+
+
+
+
+    <div *ngFor="let data of serverData">
+        {{data.first_name}} {{data.email}}
+    </div>
+</div>
+<app-footer></app-footer>

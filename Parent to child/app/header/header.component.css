@@ -1,0 +1,14 @@
+li {
+    display: inline-block;
+    margin: 10px;
+}
+
+.active {
+    background-color: red;
+    color: #fff;
+    padding: 10px;
+}
+
+.active a {
+    color: #fff;
+}
